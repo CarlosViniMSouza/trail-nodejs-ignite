@@ -1,0 +1,9 @@
+{
+  "name": "trail-nodejs",
+  "version": "1.0.0",
+  "description": "nodejs studies",
+  "main": "index.js",
+  "author": "CarlosViniMSouza",
+  "license": "MIT",
+  "private": false
+}
