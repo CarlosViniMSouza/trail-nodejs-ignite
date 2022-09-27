@@ -1,4 +1,4 @@
 git add .
-git commit -m "Next Lesson: Setup Project -> start"
+git commit -m "Chapter I -> done"
 git push
 git status
