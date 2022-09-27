@@ -1,5 +1,4 @@
-git init
 git add .
-git commit -m "Chapter I -> done"
+git commit -m "node_modules -> removed"
 git push
 git status
