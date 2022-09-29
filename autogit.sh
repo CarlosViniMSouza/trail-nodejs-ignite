@@ -1,4 +1,4 @@
 git add .
-git commit -m "projects -> FinAPI started"
+git commit -m "FinAPI -> first requirement done!"
 git push
 git status
