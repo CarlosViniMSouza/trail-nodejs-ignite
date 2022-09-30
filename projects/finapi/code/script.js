@@ -1,31 +1,39 @@
-const express = require("express")
-const { v4: uuidv4 } = require("uuid")
+const express = require("express");
+const { v4: uuidv4 } = require("uuid");
 
-const app = express()
-app.use(express.json())
+const app = express();
+app.use(express.json());
 
-const customers = []
+const customers = [];
 
 // middlewares
 function verifyIfExistsAccountCPF(request, response, next) {
-    const { cpf } = request.headers
-    const customer = customers.find((customer) => customer.cpf === cpf)
+    const { cpf } = request.headers;
+    const customer = customers.find((customer) => customer.cpf === cpf);
 
     if (!customer) {
-        return response.status(400).json({ error: "Customer not Found!" })
+        return response.status(400).json({ error: "Customer not Found!" });
     }
 
-    request.customer = customer
+    request.customer = customer;
 
     return next();
 }
 
+app.get("/statement", verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+
+    return response.json(customer.statement);
+})
+
+// app.use(verifyIfExistsAccountCPF)
+
 app.post("/account", (request, response) => {
-    const { cpf, name } = request.body
-    const customerExists = customers.some((customer) => customer.cpf === cpf)
+    const { cpf, name } = request.body;
+    const customerExists = customers.some((customer) => customer.cpf === cpf);
 
     if (customerExists) {
-        return response.status(400).json({ error: "Customer already Exists!" })
+        return response.status(400).json({ error: "Customer already Exists!" });
     }
 
     customers.push({
@@ -33,16 +41,24 @@ app.post("/account", (request, response) => {
         name,
         id: uuidv4(),
         statement: []
-    })
+    });
 
-    return response.status(201).send()
+    return response.status(201).send();
 })
 
-// app.use(verifyIfExistsAccountCPF)
+app.post("/deposit", verifyIfExistsAccountCPF, (request, response) => {
+    const { description, amount } = request.body;
+    const { customer } = request;
+    const statementOperation = {
+        description,
+        amount,
+        created_at: new Date(),
+        type: "credit",
+    };
 
-app.get("/statement", verifyIfExistsAccountCPF, (request, response) => {
-    const { customer } = request
-    return response.json(customer.statement)
+    customer.statement.push(statementOperation);
+
+    return response.status(201).send();
 })
 
-app.listen(3030)
+app.listen(3030);
