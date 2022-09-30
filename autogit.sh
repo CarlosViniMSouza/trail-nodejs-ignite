@@ -1,4 +1,4 @@
 git add .
-git commit -m "FinAPI -> Update account"
+git commit -m "FinAPI -> Delete account"
 git push
 git status

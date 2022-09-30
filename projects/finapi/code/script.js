@@ -18,7 +18,7 @@ function verifyIfExistsAccountCPF(request, response, next) {
     request.customer = customer;
 
     return next();
-}
+};
 
 function getBalance(statement) {
     const balance = statement.reduce((acc, operation) => {
@@ -30,7 +30,7 @@ function getBalance(statement) {
     }, 0);
 
     return balance;
-}
+};
 
 // Operations Commons
 
@@ -38,7 +38,7 @@ app.get("/statement", verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request;
 
     return response.json(customer.statement);
-})
+});
 
 app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request;
@@ -49,7 +49,7 @@ app.get("/statement/date", verifyIfExistsAccountCPF, (request, response) => {
     const statement = customer.statement.filter((statement) => statement.created_at.toDateString() === new Date(dateFormat).toDateString());
 
     return response.json(customer.statement);
-})
+});
 
 // app.use(verifyIfExistsAccountCPF)
 
@@ -69,7 +69,7 @@ app.post("/account", (request, response) => {
     });
 
     return response.status(201).send();
-})
+});
 
 app.post("/deposit", verifyIfExistsAccountCPF, (request, response) => {
     const { description, amount } = request.body;
@@ -84,7 +84,7 @@ app.post("/deposit", verifyIfExistsAccountCPF, (request, response) => {
     customer.statement.push(statementOperation);
 
     return response.status(201).send();
-})
+});
 
 app.post("/withdraw", verifyIfExistsAccountCPF, (request, response) => {
     const { amount } = request.body;
@@ -104,6 +104,21 @@ app.post("/withdraw", verifyIfExistsAccountCPF, (request, response) => {
     customer.statement.push(statementOperation);
 
     return response.status(201).send();
-})
+});
+
+app.put("/account", verifyIfExistsAccountCPF, (request, response) => {
+    const { name } = request.body;
+    const { customer } = request;
+
+    customer.name = name;
+
+    return response.status(201).send();
+});
+
+app.get("/account", verifyIfExistsAccountCPF, (request, response) => {
+    const { customer } = request;
+
+    return response.json(customer);
+});
 
 app.listen(3030);
