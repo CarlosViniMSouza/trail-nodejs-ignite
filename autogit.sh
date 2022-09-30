@@ -1,4 +1,4 @@
 git add .
-git commit -m "desafio01 -> POST /user & GET /user -> done"
+git commit -m "desafio01 -> Next step: PUT /todos/:id router"
 git push
 git status

@@ -11,8 +11,8 @@ const users = [];
 
 // Middleware
 function checksExistsUserAccount(request, response, next) {
-  const { name } = request.headers;
-  const user = users.find((user) => user.name === name)
+  const { username } = request.headers;
+  const user = users.find((user) => user.username === username)
 
   if (!user) {
     return response.status(400).json({ error: "User not found" });
@@ -46,15 +46,35 @@ app.post('/users', (request, response) => {
   return response.status(201).send();
 });
 
-app.get('/todos', checksExistsUserAccount, (request, response) => {
+// function extra for show our users
+app.get('/users', checksExistsUserAccount, (request, response) => {
   const { user } = request;
 
   return response.json(user);
 });
 
 app.post('/todos', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { title, deadline } = request.body;
+  const { user } = request;
+
+  const todoCreation = {
+    id: uuidv4(),
+    title,
+    done: false,
+    deadline,
+    created_at: new Date(),
+  };
+
+  user.todos.push(todoCreation);
+
+  return response.status(201).send();
 });
+
+app.get("/todos", checksExistsUserAccount, (request, response) => {
+  const { user } = request;
+
+  return response.json(user.todos);
+})
 
 app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
   // Complete aqui

@@ -121,7 +121,7 @@ app.get("/account", verifyIfExistsAccountCPF, (request, response) => {
     return response.json(customer);
 });
 
-app.delete("/account", verifyIfExistsAccount, (request, response) => {
+app.delete("/account", verifyIfExistsAccountCPF, (request, response) => {
     const { customer } = request;
 
     customers.splice(customer, 1);
