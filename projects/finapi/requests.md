@@ -9,9 +9,10 @@
 - [x] It must be possible do an deposit.
 - [x] It must be possible do an withdraw.
 - [x] It must be possible search the customer bank statement by day.
-- [] It must be possible update customer data.
-- [] It must be possible get customer account data.
-- [] It must be possible delete an account.
+- [x] It must be possible update customer data.
+- [x] It must be possible get customer account data.
+- [x] It must be possible delete an account.
+- [x] It must be possible return the customer total balance.
 
 ## Business Rules
 
@@ -20,4 +21,4 @@
 - [x] It must be not possible do search client bank statement in an nonexistent account.
 - [x] It must be not possible do withdraw in an nonexistent account.
 - [x] It must be not possible delete an nonexistent account.
-- [] It must be not possible do withdraw when the balance is insufficient.
+- [x] It must be not possible do withdraw when the balance is insufficient.
