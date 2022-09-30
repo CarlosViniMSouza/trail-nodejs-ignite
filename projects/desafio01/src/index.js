@@ -26,7 +26,7 @@ function checksExistsUserAccount(request, response, next) {
 // function for give welcome to user! ✌️🤓
 app.get("/", (request, response) => {
   return response.json({ message: "Hello for you! 🖖" });
-})
+});
 
 app.post('/users', (request, response) => {
   const { username, name } = request.body;
@@ -61,7 +61,7 @@ app.post('/todos', checksExistsUserAccount, (request, response) => {
     id: uuidv4(),
     title,
     done: false,
-    deadline,
+    deadline: new Date(deadline),
     created_at: new Date(),
   };
 
@@ -77,7 +77,20 @@ app.get("/todos", checksExistsUserAccount, (request, response) => {
 })
 
 app.put('/todos/:id', checksExistsUserAccount, (request, response) => {
-  // Complete aqui
+  const { title, deadline } = request.body;
+  const { id } = request.params;
+  const { user } = request;
+
+  const todoNew = user.todo.find(todoNew => todoNew.id === id);
+
+  if (!todoNew) {
+    return response.status(404).json({ error: "Todo not Found!" });
+  }
+
+  todoNew.title = title;
+  todoNew.deadline = new Date(deadline);
+
+  return response.json(todoNew);
 });
 
 app.patch('/todos/:id/done', checksExistsUserAccount, (request, response) => {
