@@ -1,4 +1,4 @@
 git add .
-git commit -m "FinAPI -> List bank statement by date"
+git commit -m "FinAPI -> Update account"
 git push
 git status

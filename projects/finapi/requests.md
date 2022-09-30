@@ -8,7 +8,7 @@
 - [x] It must be possible search the client bank statement.
 - [x] It must be possible do an deposit.
 - [x] It must be possible do an withdraw.
-- [] It must be possible search the customer bank statement by day.
+- [x] It must be possible search the customer bank statement by day.
 - [] It must be possible update customer data.
 - [] It must be possible get customer account data.
 - [] It must be possible delete an account.
