@@ -1,4 +1,4 @@
 git add .
-git commit -m "desafio01 -> removed for other folder"
+git commit -m "Next Lesson: Criando projeto com typescript"
 git push
 git status
