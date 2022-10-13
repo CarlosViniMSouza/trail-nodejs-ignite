@@ -1,4 +1,4 @@
 git add .
-git commit -m "Next Lesson: Configurando ts-node-dev"
+git commit -m "Next Lesson: Debugando a aplicação"
 git push
 git status
