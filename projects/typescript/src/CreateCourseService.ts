@@ -8,14 +8,15 @@
 
 interface CourseInfos {
     name: string;
-    duration: number;
+    duration?: number; // Optional Tribute
     educator: string;
 }
 
 class CreateCourseService {
 
-    execute({ duration, educator, name }: CourseInfos) {
-        console.log(duration, educator, name);
+    // tribute 'duration' have default value
+    execute({ educator, name, duration = 10 }: CourseInfos) {
+        console.log(educator, name, duration);
     }
 }
 
