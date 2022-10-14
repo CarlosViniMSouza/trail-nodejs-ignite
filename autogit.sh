@@ -1,4 +1,4 @@
 git add .
-git commit -m "Next Lesson: Criando categoria"
+git commit -m "diagramDB & README.md -> included"
 git push
 git status
