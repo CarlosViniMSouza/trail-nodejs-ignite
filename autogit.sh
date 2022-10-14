@@ -1,4 +1,4 @@
 git add .
-git commit -m "Next Lesson: Inserindo tipagem para categoria"
+git commit -m "Next Lesson: Criando repositório de categoria"
 git push
 git status
