@@ -5,7 +5,6 @@ const app = express();
 
 app.use(express.json());
 app.use("/categories", categoriesRoutes);
-app.use("/getCategories", categoriesRoutes);
 
 app.get("/", (request, response) => {
     return response.json({ message: "Project Started" })
