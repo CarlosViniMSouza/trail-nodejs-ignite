@@ -1,4 +1,4 @@
 git add .
-git commit -m "Next Lesson: Entendendo o S.O.L.I.D -> (LSP)"
+git commit -m "Now: Criando Service de Especificação | Separando módulos"
 git push
 git status
