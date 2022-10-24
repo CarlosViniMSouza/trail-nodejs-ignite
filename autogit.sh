@@ -1,4 +1,4 @@
 git add .
-git commit -m "Now: Criando Service de Especificação | Separando módulos"
+git commit -m "Now: Criando repositório de especificação"
 git push
 git status
