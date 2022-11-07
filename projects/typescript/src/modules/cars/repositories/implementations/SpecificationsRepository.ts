@@ -1,9 +1,9 @@
 import {
     ICreateSpecification,
     ISpecificationsRepository
-} from "./ISpecificationsRepository";
+} from "../ISpecificationsRepository";
 
-import { Specification } from "../model/Specifications";
+import { Specification } from "../../model/Specifications";
 
 class SpecificationsRepository implements ISpecificationsRepository {
     private specifications: Specification[];

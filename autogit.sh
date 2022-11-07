@@ -1,4 +1,4 @@
 git add .
-git commit -m "Now: Separando os repositórios"
+git commit -m "Now: Criando use case de especificação"
 git push
 git status

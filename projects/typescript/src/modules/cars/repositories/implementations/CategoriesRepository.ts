@@ -1,6 +1,6 @@
-import { Category } from "../model/Category";
-import { ICreateCategory } from "./ICategoriesRepository";
-import { ICategoriesRepository } from "./ICategoriesRepository";
+import { Category } from "../../model/Category";
+import { ICreateCategory } from "../ICategoriesRepository";
+import { ICategoriesRepository } from "../ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
     private static INSTANCE: CategoriesRepository;
