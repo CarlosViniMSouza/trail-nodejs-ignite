@@ -1,10 +1,10 @@
 {
-    "editor.fontSize": 22,
-    "editor.fontFamily": "monospace, Consolas, 'Courier New'",
+    "editor.fontSize": 20,
+    "editor.fontFamily": "Fira Code, monospace, Consolas, 'Courier New'",
     "editor.fontLigatures": true,
     "editor.wordWrap": "on",
     "explorer.compactFolders": false,
-    "terminal.integrated.fontSize": 20,
+    "terminal.integrated.fontSize": 18,
     "workbench.editor.tabSizing": "shrink",
     "workbench.iconTheme": "material-icon-theme",
     "editor.tabSize": 4,
@@ -20,7 +20,7 @@
     "explorer.confirmDragAndDrop": false,
     "extensions.ignoreRecommendations": true,
     "workbench.startupEditor": "none",
-    "workbench.colorTheme": "Tokyo Storm AltSynt",
+    "workbench.colorTheme": "GitHub Dark Dimmed",
     "[python]": {
         "editor.defaultFormatter": "ms-python.python"
     },

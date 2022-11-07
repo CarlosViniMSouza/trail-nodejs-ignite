@@ -1,4 +1,4 @@
 git add .
-git commit -m "Now: Conhecendo Singleton Pattern"
+git commit -m "Now: Separando os repositórios"
 git push
 git status
