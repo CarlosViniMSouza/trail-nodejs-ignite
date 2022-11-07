@@ -1,4 +1,4 @@
 git add .
-git commit -m "Now: Criando use case de especificação"
+git commit -m "Now: Refatorando as rotas"
 git push
 git status

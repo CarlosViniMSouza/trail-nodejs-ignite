@@ -12,7 +12,7 @@ class CreateCategoryUseCase {
     }
 
     execute({ name, description }: IRequest): void {
-        const categoriesRepository = new CategoriesRepository();
+        const categoriesRepository = CategoriesRepository.getInstance();
         const categoryAlreadyExists = this.categoriesRepository.findByName(name);
 
         if (categoryAlreadyExists) {
