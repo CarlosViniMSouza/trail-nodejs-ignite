@@ -1,4 +1,4 @@
 git add .
-git commit -m "Now: Conhecendo o multer"
+git commit -m "Now: Conhecendo as formas de usar o banco de dados"
 git push
 git status
