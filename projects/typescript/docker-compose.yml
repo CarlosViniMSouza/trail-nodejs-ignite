@@ -1,9 +1,31 @@
 version: "3.7"
 
 services:
+    database:
+        image: postgres
+        container_name: database
+        restart: always
+        ports:
+            - 5555:5555
+        enviroment:
+            - POSTGRES_USER=docker
+            - POSTGRES_PASSWORD=0000
+            - POSTGRES_DB=value
+        volumes:
+            - pgdata:/data/postgres
+
     app:
-        build:
+        build: .
+        container_name: value
         ports:
             - 3030:3030
         volumes:
             - .:/usr/app
+        links:
+            - database
+        depends_on:
+            - database
+
+volumes:
+    pgdata:
+        driver: local
