@@ -3,7 +3,7 @@ import {
     ISpecificationsRepository
 } from "../ISpecificationsRepository";
 
-import { Specification } from "../../model/Specifications";
+import { Specification } from "../../entities/Specifications";
 
 class SpecificationsRepository implements ISpecificationsRepository {
     private specifications: Specification[];
