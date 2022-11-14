@@ -1,4 +1,4 @@
 git add .
-git commit -m "Fix: Docker tested successfully"
+git commit -m "Now: Criando migration de categoria"
 git push
 git status
