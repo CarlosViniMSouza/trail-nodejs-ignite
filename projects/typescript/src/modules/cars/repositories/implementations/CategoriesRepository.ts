@@ -4,20 +4,10 @@ import { ICreateCategory } from "../ICategoriesRepository";
 import { ICategoriesRepository } from "../ICategoriesRepository";
 
 class CategoriesRepository implements ICategoriesRepository {
-    private static INSTANCE: CategoriesRepository;
-
     private repository: Repository<Category>;
 
-    private constructor() {
+    constructor() {
         this.repository = getRepository(Category);
-    }
-
-    public static getInstance() {
-        if (!CategoriesRepository.INSTANCE) {
-            CategoriesRepository.INSTANCE = new CategoriesRepository();
-        }
-
-        return CategoriesRepository.INSTANCE;
     }
 
     async create({ name, description }: ICreateCategory): Promise<void> {

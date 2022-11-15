@@ -1,4 +1,4 @@
 git add .
-git commit -m "Now: Alterando o Repositório de categoria"
+git commit -m "Now: Dependencies Inject (Lesson 03)"
 git push
 git status
